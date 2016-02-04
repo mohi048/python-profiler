@@ -6,17 +6,17 @@ This is a simple python program to check the arguments passed to a function. In 
 
 - Copy the file `logger.py` to the local directory and import it on your python program. If its on same directory just import it
 ```
-from logger import profile_it
+from logger import profile_me
 ```
 - Decorate the targent function
 ```
-@profile_it(verbose=True)
+@profile_me(verbose=True)
 ```
 - You need to set the argument `Verbose` to either true or false
 
-- If decorator(argument) set to `@profile_it(verbose=True)` it would profile the function runtime , would create and updated the file `performance.txt`
+- If decorator(argument) set to `@profile_me(verbose=True)` it would profile the function runtime , would create and updated the file `performance.txt`
 
-- If decorator(argument) set to `@profile_it(verbose=False)` it would log only the arguments passed to function , would create and update the file `variables.txt`
+- If decorator(argument) set to `@profile_me(verbose=False)` it would log only the arguments passed to function , would create and update the file `variables.txt`
 
 - Execute your source python program to call the target function to be profiled
 
