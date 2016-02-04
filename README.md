@@ -4,7 +4,7 @@ This is a simple python program to check the arguments passed to a function. In 
 
 ### USAGE
 
-- Copy the file logger.py to the local directory and import it on your python program. If its on same directory just import it
+- Copy the file `logger.py` to the local directory and import it on your python program. If its on same directory just import it
 ```
 from logger import profile_it
 ```
