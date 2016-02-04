@@ -18,6 +18,8 @@ from logger import profile_it
 
 - If decorator(argument) set to `@profile_it(verbose=False)` it would log only the arguments passed to function , would create and update the file `variables.txt`
 
-- Execute the python program to call the target function to be profiled
+- Execute your source python program to call the target function to be profiled
 
 - Check the new files created as `variables.txt` and `performance.txt` located on the base directory of logger.py for the results of profile
+
+- You can try the sample code `myprogram.py` having functions decorated by profiler
