@@ -10,13 +10,13 @@ from logger import profile_it
 ```
 - Decorate the targent function
 ```
-@profile_me(verbose=True)
+@profile_it(verbose=True)
 ```
 - You need to set the argument `Verbose` to either true or false
 
-- If decorator(argument) set to `@profile_me(verbose=True)` it would profile the function runtime , would create and updated the file `performance.txt`
+- If decorator(argument) set to `@profile_it(verbose=True)` it would profile the function runtime , would create and updated the file `performance.txt`
 
-- If decorator(argument) set to `@profile_me(verbose=False)` it would log only the arguments passed to function , would create and update the file `variables.txt`
+- If decorator(argument) set to `@profile_it(verbose=False)` it would log only the arguments passed to function , would create and update the file `variables.txt`
 
 - Execute the python program to call the target function to be profiled
 
