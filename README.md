@@ -12,7 +12,6 @@ from logger import profile_it
 ```
 @profile_it(verbose=True)
 ```
-
 3. You need to set the argument `Verbose` to either true or false
 
 4. If decorator(argument) set to `@profile_it(verbose=True)` it would profile the function runtime , would create and updated the file `performance.txt`
