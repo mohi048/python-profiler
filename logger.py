@@ -2,15 +2,16 @@
 ## Python script to profile function arguments and performance
 
 import cProfile
-import time
+import datetime
+import inspect
 
 def profile_me(verbose):
     def profile_it(func):
         def wrapper(*args, **kwargs):
             fh = open('variables.txt', 'a')
-            fh.write('\n'+(time.strftime("[%d-%m-%Y %H:%M:%S]  ")) +\
-            'Logging variables for function : ')
-            fh.write(func.__name__+" : "+str(args)+" : "+str(kwargs))
+            fh.write('\n'+(datetime.datetime.now().strftime("[%d-%m-%Y %H:%M:%S.%f]\t")) +\
+            'called function : ')
+            fh.write(func.__name__+" : at line "+str(inspect.currentframe().f_back.f_lineno)+" : "+str(args)+" : "+str(kwargs))
             fh.close()
             if verbose:
                 profile = cProfile.Profile()
@@ -22,7 +23,7 @@ def profile_me(verbose):
                 finally:
                     tt = profile.getstats()
                     fh = open('performance.txt', 'a')
-                    fh.write("\n"+(time.strftime("[%d-%m-%Y %H:%M:%S]  "))+\
+                    fh.write("\n"+(datetime.datetime.now().strftime("[%d-%m-%Y %H:%M:%S.%f]\t"))+\
                         "Profiling the function "+func.__name__+" on passing the variables "+" : "+str(args)+" : "+str(kwargs))
                     for items in tt:
                         code = items.code
